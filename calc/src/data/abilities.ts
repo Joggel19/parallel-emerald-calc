@@ -335,7 +335,11 @@ const SV = SS.concat([
   'Zero to Hero',
 ]);
 
-export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
+const PE = SV.concat([
+  'Inverted Scales',
+]);
+
+export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PE];
 
 export class Abilities implements I.Abilities {
   private readonly gen: I.GenerationNum;

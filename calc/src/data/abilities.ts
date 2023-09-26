@@ -272,6 +272,7 @@ const SS = SM.concat([
   'Ice Face',
   'Ice Scales',
   'Intrepid Sword',
+  'Inverted Scales',
   'Libero',
   'Mimicry',
   'Mirror Armor',
@@ -333,10 +334,6 @@ const SV = SS.concat([
   'Wind Power',
   'Wind Rider',
   'Zero to Hero',
-]);
-
-const PE = SV.concat([
-  'Inverted Scales',
 ]);
 
 export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PE];

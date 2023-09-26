@@ -500,6 +500,9 @@ export function calculateSMSSSV(
       baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
       desc.weather = field.weather;
     }
+  } else if ((field.hasWeather('Hail') && attacker.hasType('Ice'))) {
+    baseDamage = pokeRound(OF32(baseDamage * 5324) / 4096);
+    desc.weather = field.weather;
   }
 
   if (hasTerrainSeed(defender) &&
@@ -1051,10 +1054,12 @@ export function calculateBPModsSMSSSV(
       attacker.hasStatus('psn', 'tox') && move.category === 'Physical') ||
     (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
     (attacker.hasAbility('Strong Jaw') && move.flags.bite) ||
-    (attacker.hasAbility('Steely Spirit') && move.hasType('Steel')) ||
     (attacker.hasAbility('Sharpness') && move.flags.slicing)
   ) {
     bpMods.push(6144);
+    desc.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Steely Spirit') && move.hasType('Steel')) {
+    bpMods.push(5324);
     desc.attackerAbility = attacker.ability;
   }
 
@@ -1261,7 +1266,7 @@ export function calculateAtModsSMSSSV(
     (attacker.named('Cherrim') &&
      attacker.hasAbility('Flower Gift') &&
      field.hasWeather('Sun', 'Harsh Sunshine') &&
-     move.category === 'Physical') ||
+     move.category === 'Special') ||
     // Gorilla Tactics has no effect during Dynamax (Anubis)
     (attacker.hasAbility('Gorilla Tactics') && move.category === 'Physical' &&
      !attacker.isDynamaxed)) {
@@ -1539,7 +1544,7 @@ export function calculateFinalModsSMSSSV(
   }
 
   if (attacker.hasAbility('Neuroforce') && typeEffectiveness > 1) {
-    finalMods.push(5120);
+    finalMods.push(6144);
     desc.attackerAbility = attacker.ability;
   } else if (attacker.hasAbility('Sniper') && isCritical) {
     finalMods.push(6144);
@@ -1579,6 +1584,11 @@ export function calculateFinalModsSMSSSV(
     desc.defenderAbility = defender.ability;
   }
 
+  if (defender.hasAbility('Keen Eye') && !move.flags.contact) {
+    finalMods.push(3276);
+    desc.defenderAbility = defender.ability;
+  }
+
   if (field.defenderSide.isFriendGuard) {
     finalMods.push(3072);
     desc.isFriendGuard = true;
@@ -1588,6 +1598,25 @@ export function calculateFinalModsSMSSSV(
     finalMods.push(8192);
     desc.defenderAbility = defender.ability;
   }
+
+  if (defender.hasAbility('Inverted Scales')) {
+    switch (typeEffectiveness) {
+        case 4:
+            finalMods.push(256);
+            break;
+        case 2:
+            finalMods.push(1024);
+            break;    
+        case 0.5:
+            finalMods.push(16384);
+            break;     
+        case 0.25:
+            finalMods.push(65536);
+            break; 
+        default:
+    }
+    desc.defenderAbility = defender.ability;
+}
 
   if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1 && !move.isZ) {
     finalMods.push(4915);

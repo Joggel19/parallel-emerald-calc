@@ -146,6 +146,10 @@ export function getMoveEffectiveness(
     return 1;
   } else if (move.named('Freeze-Dry') && type === 'Water') {
     return 2;
+  } else if (move.named('Tectonic Drift') && type === 'Flying') {
+    return 0;
+  } else if (move.named('Tectonic Drift') && (type === 'Ground' || type === 'Steel')) {
+    return 2;  
   } else if (move.named('Flying Press')) {
     return (
       gen.types.get('fighting' as ID)!.effectiveness[type]! *

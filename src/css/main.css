@@ -5,15 +5,15 @@ a img {
 .header {
     margin: 0 0 30px 0;
 
-    background: #E5ECFB;
-    background: -webkit-gradient(linear, left top, left bottom, from(#E8EEFC), to(#D7DEEA));
-    background: -moz-linear-gradient(top,  #E8EEFC,  #D7DEEA);
-    background: linear-gradient(top,  #E8EEFC,  #D7DEEA);
-    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#E8EEFC', endColorstr='#D7DEEA');
+    background: #0e63a5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#0e63a5), to(#0e63a5));
+    background: -moz-linear-gradient(top,  #0e63a5,  #0e63a5);
+    background: linear-gradient(top,  #0e63a5,  #0e63a5);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0e63a5', endColorstr='#0e63a5');
 
     border-bottom: 1px solid #AAA;
     box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .6), 0px 2px 2px rgba(0, 0, 0, .15);
-    min-height: 50px;
+    min-height: 16px;
 }
 .header-inner {
     max-width: 605px;
@@ -41,10 +41,21 @@ a img {
     margin: 0 -1px 0 0;
     border-radius: 0;
 }
-.nav .button img {
-    position: absolute;
+.nav .img {
+    position: relative;
     top: -8px;
     left: -150px;
+}
+.center {
+    display: block;
+    margin: auto;
+    width: 200%;
+}
+hr {
+    width:98.5%;
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .nav .button.cur,
 .nav .button.cur:hover {
@@ -153,7 +164,7 @@ div.wrapper > div > span {
 fieldset {
     float: left;
     background-color: #F1F4F9;
-    border: 1px solid #AAAAAA;
+    border: 4px solid #AAAAAA;
 }
 legend {
     font-weight: bold;

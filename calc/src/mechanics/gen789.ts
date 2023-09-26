@@ -500,7 +500,7 @@ export function calculateSMSSSV(
       baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
       desc.weather = field.weather;
     }
-  } else if ((field.hasWeather('Hail') && attacker.hasType('Ice'))) {
+  } else if (field.hasWeather('Hail') && attacker.hasType('Ice')) {
     baseDamage = pokeRound(OF32(baseDamage * 5324) / 4096);
     desc.weather = field.weather;
   }

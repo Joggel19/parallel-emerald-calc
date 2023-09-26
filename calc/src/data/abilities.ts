@@ -272,7 +272,6 @@ const SS = SM.concat([
   'Ice Face',
   'Ice Scales',
   'Intrepid Sword',
-  'Inverted Scales',
   'Libero',
   'Mimicry',
   'Mirror Armor',

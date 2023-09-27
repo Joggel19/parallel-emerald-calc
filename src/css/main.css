@@ -48,8 +48,8 @@ a img {
 }
 .center {
     display: block;
-    margin: auto;
-    width: 200%;
+    margin-left: 45px;
+    width: 100%;
 }
 hr {
     width:98.5%;

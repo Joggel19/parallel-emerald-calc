@@ -8751,11 +8751,6 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
 };
 
-const SS: {[name: string]: SpeciesData} = extend(true, {}, SM, SS_PATCH);
-
-delete SS['Pikachu-Starter'];
-delete SS['Eevee-Starter'];
-
 const PLA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Arcanine: {otherFormes: ['Arcanine-Hisui']},
   Avalugg: {otherFormes: ['Avalugg-Hisui']},
@@ -8981,6 +8976,11 @@ const PLA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     nfe: true,
   },
 };
+
+const SS: {[name: string]: SpeciesData} = extend(true, {}, SM, SS_PATCH, PLA_PATCH);
+
+delete SS['Pikachu-Starter'];
+delete SS['Eevee-Starter'];
 
 const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Bisharp: {nfe: true},
@@ -9934,7 +9934,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
 };
 
-const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH, PLA_PATCH);
+const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH);
 
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 

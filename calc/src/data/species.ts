@@ -1062,7 +1062,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 26.5,
   },
   Feraligatr: {
-    types: ['Water'],
+    types: ['Water', 'Dragon'],
     bs: {hp: 85, at: 105, df: 100, sa: 79, sd: 83, sp: 78},
     weightkg: 88.8,
   },

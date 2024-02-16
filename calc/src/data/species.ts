@@ -3301,7 +3301,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Lumineon: {
     types: ['Water', 'Fairy'],
-    bs: {hp: 75, at: 45, df: 70, sa: 115, sd: 86, sp: 100},
+    bs: {hp: 69, at: 45, df: 65, sa: 115, sd: 86, sp: 100},
     weightkg: 24,
     abilities: {0: 'Swift Swim'},
   },
@@ -3314,7 +3314,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Luxray: {
     types: ['Electric'],
-    bs: {hp: 80, at: 120, df: 79, sa: 95, sd: 79, sp: 95},
+    bs: {hp: 80, at: 120, df: 79, sa: 95, sd: 79, sp: 89},
     weightkg: 42,
     abilities: {0: 'Rivalry'},
   },
@@ -8491,7 +8491,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Poison', 'Psychic'],
     bs: {hp: 95, at: 100, df: 95, sa: 100, sd: 70, sp: 30},
     weightkg: 70.5,
-    abilities: {0: 'Quick Draw'},
+    abilities: {0: 'Gluttony'},
     baseSpecies: 'Slowbro',
   },
   'Slowking-Galar': {

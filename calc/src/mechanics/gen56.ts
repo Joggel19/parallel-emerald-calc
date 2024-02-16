@@ -317,7 +317,7 @@ export function calculateBWXY(
     const wr =
         (attacker.weightkg * getWeightFactor(attacker)) /
         (defender.weightkg * getWeightFactor(defender));
-    basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
+    basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 90 : wr >= 2 ? 80 : 60;
     desc.moveBP = basePower;
     break;
   case 'Stored Power':

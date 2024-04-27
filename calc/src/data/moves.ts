@@ -3618,6 +3618,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 80,
     type: 'Rock',
     category: 'Physical',
+    target: 'allAdjacent',
     zp: 160,
     maxPower: 130,
     secondaries: true,
